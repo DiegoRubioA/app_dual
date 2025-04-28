@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'core/theme/light_theme.dart';
+import 'core/theme/dark_theme.dart';
+
+// Screens
+import 'package:app_dual/presentation/screen/home/home_screen.dart';
+import 'package:app_dual/presentation/screen/details/details_screen.dart';
+import 'package:app_dual/presentation/screen/create_post/create_post_screen.dart';
+import 'package:app_dual/presentation/screen/profile/profile_screen.dart';
+import 'package:app_dual/presentation/screen/settings/settings_screen.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'l10n/l10n.dart';
+
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'presentation/providers/locale_provider.dart';
+
+class AppDual extends ConsumerWidget {
+  const AppDual({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final locale = ref.watch(localeProvider);
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'App Dual',
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: ThemeMode.system,
+      locale: locale,
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.supportedLocales,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/details': (context) => const DetailsScreen(),
+        '/create': (context) => const CreatePostScreen(),
+        '/profile': (context) => const ProfileScreen(),
+        '/settings': (context) => const SettingsScreen(),
+      },
+    );
+  }
+}

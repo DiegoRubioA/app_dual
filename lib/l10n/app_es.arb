@@ -1,0 +1,56 @@
+{
+    "@@locale": "es",
+    "appTitle": "Aplicación Dual",
+    "@appTitle": {
+      "description": "Título principal de la aplicación"
+    },
+    "welcomeMessage": "Bienvenido a la Aplicación Dual",
+    "@welcomeMessage": {
+      "description": "Mensaje de bienvenida en la pantalla principal"
+    },
+    "settingsTitle": "Configuración",
+    "@settingsTitle": {
+      "description": "Título de la pantalla de configuración"
+    },
+    "languageLabel": "Selecciona un idioma",
+    "@languageLabel": {
+      "description": "Etiqueta para seleccionar el idioma"
+    },
+    "home": "Inicio",
+    "@home": {
+      "description": "Nombre de la opción de inicio en el menú"
+    },
+    "createPost": "Crear Publicación",
+    "@createPost": {
+      "description": "Nombre de la opción para crear publicación"
+    },
+    "profile": "Mi Perfil",
+    "@profile": {
+      "description": "Nombre de la opción de perfil en el menú"
+    },
+    "deleted": "Eliminado",
+    "@deleted": {
+      "description": "Mensaje mostrado al eliminar una publicación"
+    },
+    "title": "Título",
+    "@title": {
+      "description": "Etiqueta para el campo de título"
+    },
+    "content": "Contenido",
+    "@content": {
+      "description": "Etiqueta para el campo de contenido"
+    },
+    "noImageSelected": "No has seleccionado imagen",
+    "@noImageSelected": {
+      "description": "Mensaje mostrado cuando no se selecciona una imagen"
+    },
+    "selectImage": "Seleccionar Imagen",
+    "@selectImage": {
+      "description": "Botón para seleccionar una imagen"
+    },
+    "publish": "Publicar",
+    "@publish": {
+      "description": "Botón para publicar la publicación"
+    }
+  }
+  

@@ -1,0 +1,56 @@
+{
+    "@@locale": "en",
+    "appTitle": "Dual App",
+    "@appTitle": {
+      "description": "Main title of the application"
+    },
+    "welcomeMessage": "Welcome to Dual App",
+    "@welcomeMessage": {
+      "description": "Welcome message shown on the home screen"
+    },
+    "settingsTitle": "Settings",
+    "@settingsTitle": {
+      "description": "Title for the settings screen"
+    },
+    "languageLabel": "Select a language",
+    "@languageLabel": {
+      "description": "Label shown to select the language"
+    },
+    "home": "Home",
+    "@home": {
+      "description": "Menu option for home"
+    },
+    "createPost": "Create Post",
+    "@createPost": {
+      "description": "Menu option for creating a new post"
+    },
+    "profile": "Profile",
+    "@profile": {
+      "description": "Menu option for accessing user profile"
+    },
+    "deleted": "Deleted",
+    "@deleted": {
+      "description": "Message shown when a post is deleted"
+    },
+    "title": "Title",
+    "@title": {
+      "description": "Label for the title input field"
+    },
+    "content": "Content",
+    "@content": {
+      "description": "Label for the content input field"
+    },
+    "noImageSelected": "No image selected",
+    "@noImageSelected": {
+      "description": "Message shown when no image has been selected"
+    },
+    "selectImage": "Select Image",
+    "@selectImage": {
+      "description": "Button label to select an image"
+    },
+    "publish": "Publish",
+    "@publish": {
+      "description": "Button label to publish the post"
+    }
+  }
+  

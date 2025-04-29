@@ -52,4 +52,7 @@ class SEn extends S {
 
   @override
   String get share => 'Share';
+
+  @override
+  String get hideContent => 'Hide content';
 }

@@ -184,6 +184,12 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Share'**
   String get share;
+
+  /// Label for hide
+  ///
+  /// In en, this message translates to:
+  /// **'Hide content'**
+  String get hideContent;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

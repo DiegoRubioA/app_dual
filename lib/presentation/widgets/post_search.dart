@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PostSearchDelegate extends SearchDelegate<Map<String, String>> {
-  final List<Map<String, String>> posts;
+class PostSearchDelegate extends SearchDelegate<Map<String, dynamic>> {
+  final List<Map<String, dynamic>> posts;
   PostSearchDelegate(this.posts);
 
   @override
@@ -21,7 +21,9 @@ class PostSearchDelegate extends SearchDelegate<Map<String, String>> {
     final results =
         posts
             .where(
-              (p) => p['name']!.toLowerCase().contains(query.toLowerCase()),
+              (p) => (p['name'] ?? '').toString().toLowerCase().contains(
+                query.toLowerCase(),
+              ),
             )
             .toList();
     return _buildList(context, results);
@@ -32,13 +34,15 @@ class PostSearchDelegate extends SearchDelegate<Map<String, String>> {
     final suggestions =
         posts
             .where(
-              (p) => p['name']!.toLowerCase().contains(query.toLowerCase()),
+              (p) => (p['name'] ?? '').toString().toLowerCase().contains(
+                query.toLowerCase(),
+              ),
             )
             .toList();
     return _buildList(context, suggestions);
   }
 
-  Widget _buildList(BuildContext context, List<Map<String, String>> list) {
+  Widget _buildList(BuildContext context, List<Map<String, dynamic>> list) {
     if (list.isEmpty) {
       return const Center(child: Text('No se encontraron resultados'));
     }
@@ -50,7 +54,7 @@ class PostSearchDelegate extends SearchDelegate<Map<String, String>> {
           leading: CircleAvatar(child: Text(item['name']![0])),
           title: Text(item['name']!),
           onTap: () {
-            close(context, item);
+            close(context, {});
             Navigator.pushNamed(context, '/details', arguments: item);
           },
         );

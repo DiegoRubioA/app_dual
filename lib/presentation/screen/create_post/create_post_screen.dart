@@ -1,10 +1,11 @@
-// lib/presentation/screen/create/create_post_screen.dart
-
 import 'package:flutter/material.dart';
-import 'package:app_dual/data/data.dart'; // para usar listCard y nextId
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
+import 'package:app_dual/data/data.dart';
 
 class CreatePostScreen extends StatefulWidget {
   const CreatePostScreen({super.key});
+
   @override
   // ignore: library_private_types_in_public_api
   _CreatePostScreenState createState() => _CreatePostScreenState();
@@ -12,92 +13,106 @@ class CreatePostScreen extends StatefulWidget {
 
 class _CreatePostScreenState extends State<CreatePostScreen> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _nameCtrl = TextEditingController();
-  final TextEditingController _descCtrl = TextEditingController();
-  final TextEditingController _imageCtrl = TextEditingController();
+  final _nameCtrl = TextEditingController();
+  final _descCtrl = TextEditingController();
+  File? _pickedImage;
+
+  Future<void> _pickImage() async {
+    final picker = ImagePicker();
+    final file = await picker.pickImage(source: ImageSource.gallery);
+    if (file != null) {
+      setState(() => _pickedImage = File(file.path));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
     return Scaffold(
-      appBar: AppBar(title: Text('Crear Publicación')),
+      appBar: AppBar(title: const Text('Crear Publicación')),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(20),
         child: Form(
           key: _formKey,
-          child: ListView(
+          child: Column(
             children: [
-              // Campo: Nombre
               TextFormField(
                 controller: _nameCtrl,
                 decoration: const InputDecoration(
                   labelText: 'Nombre',
-                  hintText: 'Ingresa el nombre o título',
+                  hintText: '¿Quién publica?',
                   border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.person),
                 ),
-                validator: (value) {
-                  if (value == null || value.trim().isEmpty) {
-                    return 'Nombre requerido';
-                  }
-                  return null;
-                },
+                validator:
+                    (value) =>
+                        value == null || value.trim().isEmpty
+                            ? 'Campo obligatorio'
+                            : null,
               ),
               const SizedBox(height: 16),
-              // Campo: Descripción
               TextFormField(
                 controller: _descCtrl,
                 decoration: const InputDecoration(
                   labelText: 'Descripción',
-                  hintText: 'Ingresa una descripción',
+                  hintText: '¿Qué quieres compartir?',
                   border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.description),
                 ),
                 maxLines: 3,
-                validator: (value) {
-                  if (value == null || value.trim().isEmpty) {
-                    return 'Descripción requerida';
-                  }
-                  return null;
-                },
+                validator:
+                    (value) =>
+                        value == null || value.trim().isEmpty
+                            ? 'Campo obligatorio'
+                            : null,
               ),
               const SizedBox(height: 16),
-              // Campo: URL de Imagen (opcional)
-              TextFormField(
-                controller: _imageCtrl,
-                decoration: const InputDecoration(
-                  labelText: 'Imagen (URL)',
-                  hintText: 'URL de imagen opcional',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  // Campo opcional: si no está vacío, validamos que parezca una URL
-                  if (value != null && value.isNotEmpty) {
-                    final uri = Uri.tryParse(value);
-                    if (uri == null || !(uri.isAbsolute)) {
-                      return 'URL inválida';
-                    }
-                  }
-                  return null;
-                },
+              Row(
+                children: [
+                  Expanded(
+                    child:
+                        _pickedImage != null
+                            ? ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.file(
+                                _pickedImage!,
+                                height: 120,
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                            : const Text('Ninguna imagen seleccionada'),
+                  ),
+                  const SizedBox(width: 12),
+                  IconButton(
+                    icon: const Icon(Icons.image),
+                    onPressed: _pickImage,
+                  ),
+                ],
               ),
-              const SizedBox(height: 24),
-              // Botón: Crear publicación
+              const Spacer(),
               SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(
-                  child: const Text('Crear publicación'),
+                child: FilledButton.icon(
+                  icon: const Icon(Icons.publish),
+                  label: const Text('Crear publicación'),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      // Crear el nuevo post con ID único
-                      final newPost = {
-                        "id": nextId,
-                        "name": _nameCtrl.text.trim(),
-                        "description": _descCtrl.text.trim(),
-                        "image": _imageCtrl.text.trim(),
+                      final post = {
+                        'id': nextId,
+                        'name': _nameCtrl.text.trim(),
+                        'description': _descCtrl.text.trim(),
+                        'image': _pickedImage?.path ?? '',
                       };
-                      nextId++; // actualizar para la próxima publicación nueva
-                      // Retornar el nuevo post a la pantalla anterior (Home)
-                      Navigator.pop(context, newPost);
+                      nextId++;
+                      Navigator.pop(context, post);
                     }
                   },
+                  style: FilledButton.styleFrom(
+                    backgroundColor: colors.primary,
+                    foregroundColor: colors.onPrimary,
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                  ),
                 ),
               ),
             ],

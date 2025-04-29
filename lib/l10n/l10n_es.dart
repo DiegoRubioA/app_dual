@@ -52,4 +52,7 @@ class SEs extends S {
 
   @override
   String get share => 'Compartir';
+
+  @override
+  String get hideContent => 'Ocultar contenido';
 }

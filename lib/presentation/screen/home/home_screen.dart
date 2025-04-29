@@ -3,16 +3,41 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:app_dual/data/data.dart';
 import 'package:app_dual/presentation/widgets/post_card.dart';
+import 'package:app_dual/presentation/widgets/post_search.dart';
 import 'package:app_dual/l10n/l10n.dart';
 
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      // AppBar con título internacionalizado
-      appBar: AppBar(title: Text(S.of(context)!.appTitle)),
+      // AppBar con búsqueda y título internacionalizado
+      appBar: AppBar(
+        title: Text(S.of(context)!.appTitle),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () async {
+              final navigator = Navigator.of(context); // ✅ evitar warning
+
+              final result = await showSearch<Map<String, dynamic>>(
+                context: context,
+                delegate: PostSearchDelegate(listCard),
+              );
+
+              if (result != null && result.isNotEmpty) {
+                navigator.pushNamed('/details', arguments: result);
+              }
+            },
+          ),
+        ],
+      ),
 
       // Drawer de navegación
       drawer: Drawer(
@@ -58,7 +83,7 @@ class HomeScreen extends ConsumerWidget {
           final post = listCard[index];
           return PostCard(
             data: {
-              'id': '$index',
+              'id': '${post['id']}',
               'author': post['name']!,
               'message': post['description']!,
               'imageUrl': post['image']!,
@@ -71,10 +96,16 @@ class HomeScreen extends ConsumerWidget {
         },
       ),
 
-      // Botón FAB para crear nuevo post
+      // Botón FAB que añade una publicación nueva
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/create');
+        onPressed: () async {
+          final newPost = await Navigator.pushNamed(context, '/create');
+          if (newPost != null && newPost is Map<String, dynamic>) {
+            setState(() {
+              listCard.insert(0, newPost);
+              nextId = newPost['id'] + 1;
+            });
+          }
         },
         child: const Icon(Icons.add),
       ),

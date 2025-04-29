@@ -59,6 +59,10 @@
     "share": "Compartir",
     "@share": {
       "description": "Etiqueta para la acción compartir"
+    },
+    "hideContent": "Ocultar contenido",
+    "@hideContent": {
+      "description": "Etiqueta para la ocultar la publicación"
     }
   }
   

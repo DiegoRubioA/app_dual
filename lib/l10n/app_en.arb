@@ -59,6 +59,10 @@
     "share": "Share",
     "@share": {
       "description": "Label for the share action"
+    },
+    "hideContent": "Hide content",
+    "@hideContent": {
+      "description": "Label for hide"
     }
   }
   

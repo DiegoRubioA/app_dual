@@ -13,6 +13,7 @@ import 'l10n/l10n.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'presentation/providers/locale_provider.dart';
+import 'package:app_dual/presentation/providers/theme_provider.dart';
 
 class AppDual extends ConsumerWidget {
   const AppDual({super.key});
@@ -20,13 +21,14 @@ class AppDual extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final locale = ref.watch(localeProvider);
+    final themeMode = ref.watch(themeModeProvider);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'App Dual',
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: ThemeMode.system,
+      themeMode: themeMode,
       locale: locale,
       localizationsDelegates: const [
         S.delegate,

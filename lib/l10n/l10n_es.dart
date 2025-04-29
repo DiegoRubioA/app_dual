@@ -46,4 +46,10 @@ class SEs extends S {
 
   @override
   String get publish => 'Publicar';
+
+  @override
+  String get comment => 'Comentar';
+
+  @override
+  String get share => 'Compartir';
 }

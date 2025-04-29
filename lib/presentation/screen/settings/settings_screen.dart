@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../providers/locale_provider.dart';
-import '../../../l10n/l10n.dart'; // Ajusta si tu ruta de import cambia
+import '../../providers/theme_provider.dart'; // <-- Importamos el theme provider
+import '../../../l10n/l10n.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -9,6 +10,7 @@ class SettingsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final locale = ref.watch(localeProvider);
+    final themeMode = ref.watch(themeModeProvider);
 
     return Scaffold(
       appBar: AppBar(title: Text(S.of(context)!.settingsTitle)),
@@ -35,6 +37,31 @@ class SettingsScreen extends ConsumerWidget {
                 DropdownMenuItem(
                   value: Locale('en'),
                   child: Text('English 🇺🇸'),
+                ),
+              ],
+            ),
+            const Divider(height: 32),
+            Text('Tema', style: Theme.of(context).textTheme.titleLarge),
+            const SizedBox(height: 8),
+            DropdownButton<ThemeMode>(
+              value: themeMode,
+              onChanged: (ThemeMode? newThemeMode) {
+                if (newThemeMode != null) {
+                  ref.read(themeModeProvider.notifier).state = newThemeMode;
+                }
+              },
+              items: const [
+                DropdownMenuItem(
+                  value: ThemeMode.system,
+                  child: Text('Automático'),
+                ),
+                DropdownMenuItem(
+                  value: ThemeMode.light,
+                  child: Text('Claro 🌞'),
+                ),
+                DropdownMenuItem(
+                  value: ThemeMode.dark,
+                  child: Text('Oscuro 🌙'),
                 ),
               ],
             ),

@@ -46,4 +46,10 @@ class SEn extends S {
 
   @override
   String get publish => 'Publish';
+
+  @override
+  String get comment => 'Comment';
+
+  @override
+  String get share => 'Share';
 }

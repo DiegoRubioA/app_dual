@@ -51,6 +51,14 @@
     "publish": "Publish",
     "@publish": {
       "description": "Button label to publish the post"
+    },
+    "comment": "Comment",
+    "@comment": {
+      "description": "Label for the comment action"
+    },
+    "share": "Share",
+    "@share": {
+      "description": "Label for the share action"
     }
   }
   

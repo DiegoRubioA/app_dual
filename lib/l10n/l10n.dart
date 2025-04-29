@@ -172,6 +172,18 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Publish'**
   String get publish;
+
+  /// Label for the comment action
+  ///
+  /// In en, this message translates to:
+  /// **'Comment'**
+  String get comment;
+
+  /// Label for the share action
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get share;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

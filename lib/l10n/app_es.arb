@@ -51,6 +51,14 @@
     "publish": "Publicar",
     "@publish": {
       "description": "Botón para publicar la publicación"
+    },
+    "comment": "Comentar",
+    "@comment": {
+      "description": "Etiqueta para la acción comentar"
+    },
+    "share": "Compartir",
+    "@share": {
+      "description": "Etiqueta para la acción compartir"
     }
   }
   

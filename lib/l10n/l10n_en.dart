@@ -55,4 +55,28 @@ class SEn extends S {
 
   @override
   String get hideContent => 'Hide content';
+
+  @override
+  String get sendMessage => 'Send Message';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get posts => 'Posts';
+
+  @override
+  String get followers => 'Followers';
+
+  @override
+  String get following => 'Following';
+
+  @override
+  String get userName => 'User Name';
+
+  @override
+  String get userHandle => '@username';
+
+  @override
+  String get userDescription => 'Flutter Developer | UX Lover | Coffee + Code ☕';
 }

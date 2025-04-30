@@ -1,0 +1,100 @@
+{
+    "@@locale": "de",
+    "appTitle": "Dual App",
+    "@appTitle": {
+      "description": "Haupttitel der Anwendung"
+    },
+    "welcomeMessage": "Willkommen bei der Dual App",
+    "@welcomeMessage": {
+      "description": "Willkommensnachricht auf dem Startbildschirm"
+    },
+    "settingsTitle": "Einstellungen",
+    "@settingsTitle": {
+      "description": "Titel des Einstellungsbildschirms"
+    },
+    "languageLabel": "Sprache auswählen",
+    "@languageLabel": {
+      "description": "Etikett zur Sprachauswahl"
+    },
+    "home": "Startseite",
+    "@home": {
+      "description": "Menüoption für Startseite"
+    },
+    "createPost": "Beitrag erstellen",
+    "@createPost": {
+      "description": "Menüoption für neuen Beitrag"
+    },
+    "profile": "Profil",
+    "@profile": {
+      "description": "Menüoption zum Benutzerprofil"
+    },
+    "deleted": "Gelöscht",
+    "@deleted": {
+      "description": "Nachricht bei gelöschtem Beitrag"
+    },
+    "title": "Titel",
+    "@title": {
+      "description": "Etikett für Titelfeld"
+    },
+    "content": "Inhalt",
+    "@content": {
+      "description": "Etikett für Inhaltsfeld"
+    },
+    "noImageSelected": "Kein Bild ausgewählt",
+    "@noImageSelected": {
+      "description": "Nachricht wenn kein Bild ausgewählt wurde"
+    },
+    "selectImage": "Bild auswählen",
+    "@selectImage": {
+      "description": "Schaltfläche zum Bild auswählen"
+    },
+    "publish": "Veröffentlichen",
+    "@publish": {
+      "description": "Schaltfläche zum Veröffentlichen"
+    },
+    "comment": "Kommentieren",
+    "@comment": {
+      "description": "Etikett für Kommentaraktion"
+    },
+    "share": "Teilen",
+    "@share": {
+      "description": "Etikett für Teilen-Aktion"
+    },
+    "hideContent": "Inhalt ausblenden",
+    "@hideContent": {
+      "description": "Etikett zum Ausblenden"
+    },
+    "sendMessage": "Nachricht senden",
+    "@sendMessage": {
+      "description": "Schaltfläche zum Nachricht senden"
+    },
+    "editProfile": "Profil bearbeiten",
+    "@editProfile": {
+      "description": "Schaltfläche zum Profil bearbeiten"
+    },
+    "posts": "Beiträge",
+    "@posts": {
+      "description": "Anzahl der Beiträge"
+    },
+    "followers": "Follower",
+    "@followers": {
+      "description": "Anzahl der Follower"
+    },
+    "following": "Gefolgt",
+    "@following": {
+      "description": "Anzahl der Gefolgten"
+    },
+    "userName": "Benutzername",
+    "@userName": {
+      "description": "Name des Benutzers"
+    },
+    "userHandle": "@benutzername",
+    "@userHandle": {
+      "description": "Benutzerkennung"
+    },
+    "userDescription": "Flutter-Entwickler | UX-Liebhaber | Kaffee + Code ☕",
+    "@userDescription": {
+      "description": "Kurzbiografie des Benutzers"
+    }
+  }
+  

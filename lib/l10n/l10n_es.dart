@@ -27,7 +27,7 @@ class SEs extends S {
   String get createPost => 'Crear Publicación';
 
   @override
-  String get profile => 'Mi Perfil';
+  String get profile => 'Perfil';
 
   @override
   String get deleted => 'Eliminado';
@@ -39,7 +39,7 @@ class SEs extends S {
   String get content => 'Contenido';
 
   @override
-  String get noImageSelected => 'No has seleccionado imagen';
+  String get noImageSelected => 'Ninguna imagen seleccionada';
 
   @override
   String get selectImage => 'Seleccionar Imagen';
@@ -55,4 +55,28 @@ class SEs extends S {
 
   @override
   String get hideContent => 'Ocultar contenido';
+
+  @override
+  String get sendMessage => 'Enviar mensaje';
+
+  @override
+  String get editProfile => 'Editar Perfil';
+
+  @override
+  String get posts => 'Publicaciones';
+
+  @override
+  String get followers => 'Seguidores';
+
+  @override
+  String get following => 'Siguiendo';
+
+  @override
+  String get userName => 'Nombre de Usuario';
+
+  @override
+  String get userHandle => '@nombreusuario';
+
+  @override
+  String get userDescription => 'Desarrollador Flutter | Amante de UX | Café + Código ☕';
 }

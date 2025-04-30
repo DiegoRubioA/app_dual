@@ -1,68 +1,100 @@
 {
-    "@@locale": "en",
-    "appTitle": "Dual App",
-    "@appTitle": {
-      "description": "Main title of the application"
-    },
-    "welcomeMessage": "Welcome to Dual App",
-    "@welcomeMessage": {
-      "description": "Welcome message shown on the home screen"
-    },
-    "settingsTitle": "Settings",
-    "@settingsTitle": {
-      "description": "Title for the settings screen"
-    },
-    "languageLabel": "Select a language",
-    "@languageLabel": {
-      "description": "Label shown to select the language"
-    },
-    "home": "Home",
-    "@home": {
-      "description": "Menu option for home"
-    },
-    "createPost": "Create Post",
-    "@createPost": {
-      "description": "Menu option for creating a new post"
-    },
-    "profile": "Profile",
-    "@profile": {
-      "description": "Menu option for accessing user profile"
-    },
-    "deleted": "Deleted",
-    "@deleted": {
-      "description": "Message shown when a post is deleted"
-    },
-    "title": "Title",
-    "@title": {
-      "description": "Label for the title input field"
-    },
-    "content": "Content",
-    "@content": {
-      "description": "Label for the content input field"
-    },
-    "noImageSelected": "No image selected",
-    "@noImageSelected": {
-      "description": "Message shown when no image has been selected"
-    },
-    "selectImage": "Select Image",
-    "@selectImage": {
-      "description": "Button label to select an image"
-    },
-    "publish": "Publish",
-    "@publish": {
-      "description": "Button label to publish the post"
-    },
-    "comment": "Comment",
-    "@comment": {
-      "description": "Label for the comment action"
-    },
-    "share": "Share",
-    "@share": {
-      "description": "Label for the share action"
-    },
-    "hideContent": "Hide content",
-    "@hideContent": {
-      "description": "Label for hide"
-    }
+  "@@locale": "en",
+  "appTitle": "Dual App",
+  "@appTitle": {
+    "description": "Main title of the application"
+  },
+  "welcomeMessage": "Welcome to Dual App",
+  "@welcomeMessage": {
+    "description": "Welcome message shown on the home screen"
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Title for the settings screen"
+  },
+  "languageLabel": "Select a language",
+  "@languageLabel": {
+    "description": "Label shown to select the language"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Menu option for home"
+  },
+  "createPost": "Create Post",
+  "@createPost": {
+    "description": "Menu option for creating a new post"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Menu option for accessing user profile"
+  },
+  "deleted": "Deleted",
+  "@deleted": {
+    "description": "Message shown when a post is deleted"
+  },
+  "title": "Title",
+  "@title": {
+    "description": "Label for the title input field"
+  },
+  "content": "Content",
+  "@content": {
+    "description": "Label for the content input field"
+  },
+  "noImageSelected": "No image selected",
+  "@noImageSelected": {
+    "description": "Message shown when no image has been selected"
+  },
+  "selectImage": "Select Image",
+  "@selectImage": {
+    "description": "Button label to select an image"
+  },
+  "publish": "Publish",
+  "@publish": {
+    "description": "Button label to publish the post"
+  },
+  "comment": "Comment",
+  "@comment": {
+    "description": "Label for the comment action"
+  },
+  "share": "Share",
+  "@share": {
+    "description": "Label for the share action"
+  },
+  "hideContent": "Hide content",
+  "@hideContent": {
+    "description": "Label for hide"
+  },
+  "sendMessage": "Send Message",
+  "@sendMessage": {
+    "description": "Button label to send a message"
+  },
+  "editProfile": "Edit Profile",
+  "@editProfile": {
+    "description": "Button label to edit the user profile"
+  },
+  "posts": "Posts",
+  "@posts": {
+    "description": "Label for the number of posts"
+  },
+  "followers": "Followers",
+  "@followers": {
+    "description": "Label for the number of followers"
+  },
+  "following": "Following",
+  "@following": {
+    "description": "Label for the number of following"
+  },
+  "userName": "User Name",
+  "@userName": {
+    "description": "Label for the user's name"
+  },
+  "userHandle": "@username",
+  "@userHandle": {
+    "description": "User's handle or username"
+  },
+  "userDescription": "Flutter Developer | UX Lover | Coffee + Code ☕",
+  "@userDescription": {
+    "description": "Short bio of the user"
   }
-  
+
+}

@@ -1,0 +1,100 @@
+{
+    "@@locale": "it",
+    "appTitle": "App Duale",
+    "@appTitle": {
+      "description": "Titolo principale dell'applicazione"
+    },
+    "welcomeMessage": "Benvenuto nell'app Duale",
+    "@welcomeMessage": {
+      "description": "Messaggio di benvenuto nella schermata iniziale"
+    },
+    "settingsTitle": "Impostazioni",
+    "@settingsTitle": {
+      "description": "Titolo della schermata delle impostazioni"
+    },
+    "languageLabel": "Seleziona una lingua",
+    "@languageLabel": {
+      "description": "Etichetta per selezionare la lingua"
+    },
+    "home": "Home",
+    "@home": {
+      "description": "Opzione di menu per la home"
+    },
+    "createPost": "Crea post",
+    "@createPost": {
+      "description": "Opzione di menu per creare un nuovo post"
+    },
+    "profile": "Profilo",
+    "@profile": {
+      "description": "Opzione di menu per accedere al profilo utente"
+    },
+    "deleted": "Eliminato",
+    "@deleted": {
+      "description": "Messaggio mostrato quando un post viene eliminato"
+    },
+    "title": "Titolo",
+    "@title": {
+      "description": "Etichetta del campo del titolo"
+    },
+    "content": "Contenuto",
+    "@content": {
+      "description": "Etichetta del campo del contenuto"
+    },
+    "noImageSelected": "Nessuna immagine selezionata",
+    "@noImageSelected": {
+      "description": "Messaggio quando nessuna immagine è stata selezionata"
+    },
+    "selectImage": "Seleziona immagine",
+    "@selectImage": {
+      "description": "Bottone per selezionare un'immagine"
+    },
+    "publish": "Pubblica",
+    "@publish": {
+      "description": "Bottone per pubblicare il post"
+    },
+    "comment": "Commenta",
+    "@comment": {
+      "description": "Etichetta per l'azione di commento"
+    },
+    "share": "Condividi",
+    "@share": {
+      "description": "Etichetta per l'azione di condivisione"
+    },
+    "hideContent": "Nascondi contenuto",
+    "@hideContent": {
+      "description": "Etichetta per nascondere il contenuto"
+    },
+    "sendMessage": "Invia messaggio",
+    "@sendMessage": {
+      "description": "Bottone per inviare un messaggio"
+    },
+    "editProfile": "Modifica profilo",
+    "@editProfile": {
+      "description": "Bottone per modificare il profilo utente"
+    },
+    "posts": "Post",
+    "@posts": {
+      "description": "Numero di post"
+    },
+    "followers": "Follower",
+    "@followers": {
+      "description": "Numero di follower"
+    },
+    "following": "Seguiti",
+    "@following": {
+      "description": "Numero di seguiti"
+    },
+    "userName": "Nome utente",
+    "@userName": {
+      "description": "Nome dell'utente"
+    },
+    "userHandle": "@nomeutente",
+    "@userHandle": {
+      "description": "Identificatore dell'utente"
+    },
+    "userDescription": "Sviluppatore Flutter | Amante della UX | Caffè + Codice ☕",
+    "@userDescription": {
+      "description": "Breve biografia dell'utente"
+    }
+  }
+  

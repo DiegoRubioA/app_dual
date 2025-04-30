@@ -1,68 +1,99 @@
 {
-    "@@locale": "es",
-    "appTitle": "Aplicación Dual",
-    "@appTitle": {
-      "description": "Título principal de la aplicación"
-    },
-    "welcomeMessage": "Bienvenido a la Aplicación Dual",
-    "@welcomeMessage": {
-      "description": "Mensaje de bienvenida en la pantalla principal"
-    },
-    "settingsTitle": "Configuración",
-    "@settingsTitle": {
-      "description": "Título de la pantalla de configuración"
-    },
-    "languageLabel": "Selecciona un idioma",
-    "@languageLabel": {
-      "description": "Etiqueta para seleccionar el idioma"
-    },
-    "home": "Inicio",
-    "@home": {
-      "description": "Nombre de la opción de inicio en el menú"
-    },
-    "createPost": "Crear Publicación",
-    "@createPost": {
-      "description": "Nombre de la opción para crear publicación"
-    },
-    "profile": "Mi Perfil",
-    "@profile": {
-      "description": "Nombre de la opción de perfil en el menú"
-    },
-    "deleted": "Eliminado",
-    "@deleted": {
-      "description": "Mensaje mostrado al eliminar una publicación"
-    },
-    "title": "Título",
-    "@title": {
-      "description": "Etiqueta para el campo de título"
-    },
-    "content": "Contenido",
-    "@content": {
-      "description": "Etiqueta para el campo de contenido"
-    },
-    "noImageSelected": "No has seleccionado imagen",
-    "@noImageSelected": {
-      "description": "Mensaje mostrado cuando no se selecciona una imagen"
-    },
-    "selectImage": "Seleccionar Imagen",
-    "@selectImage": {
-      "description": "Botón para seleccionar una imagen"
-    },
-    "publish": "Publicar",
-    "@publish": {
-      "description": "Botón para publicar la publicación"
-    },
-    "comment": "Comentar",
-    "@comment": {
-      "description": "Etiqueta para la acción comentar"
-    },
-    "share": "Compartir",
-    "@share": {
-      "description": "Etiqueta para la acción compartir"
-    },
-    "hideContent": "Ocultar contenido",
-    "@hideContent": {
-      "description": "Etiqueta para la ocultar la publicación"
-    }
+  "@@locale": "es",
+  "appTitle": "Aplicación Dual",
+  "@appTitle": {
+    "description": "Título principal de la aplicación"
+  },
+  "welcomeMessage": "Bienvenido a la Aplicación Dual",
+  "@welcomeMessage": {
+    "description": "Mensaje de bienvenida mostrado en la pantalla de inicio"
+  },
+  "settingsTitle": "Configuración",
+  "@settingsTitle": {
+    "description": "Título para la pantalla de configuración"
+  },
+  "languageLabel": "Selecciona un idioma",
+  "@languageLabel": {
+    "description": "Etiqueta mostrada para seleccionar el idioma"
+  },
+  "home": "Inicio",
+  "@home": {
+    "description": "Opción de menú para inicio"
+  },
+  "createPost": "Crear Publicación",
+  "@createPost": {
+    "description": "Opción de menú para crear una nueva publicación"
+  },
+  "profile": "Perfil",
+  "@profile": {
+    "description": "Opción de menú para acceder al perfil del usuario"
+  },
+  "deleted": "Eliminado",
+  "@deleted": {
+    "description": "Mensaje mostrado cuando una publicación es eliminada"
+  },
+  "title": "Título",
+  "@title": {
+    "description": "Etiqueta para el campo de entrada del título"
+  },
+  "content": "Contenido",
+  "@content": {
+    "description": "Etiqueta para el campo de entrada del contenido"
+  },
+  "noImageSelected": "Ninguna imagen seleccionada",
+  "@noImageSelected": {
+    "description": "Mensaje mostrado cuando no se ha seleccionado ninguna imagen"
+  },
+  "selectImage": "Seleccionar Imagen",
+  "@selectImage": {
+    "description": "Etiqueta del botón para seleccionar una imagen"
+  },
+  "publish": "Publicar",
+  "@publish": {
+    "description": "Etiqueta del botón para publicar la publicación"
+  },
+  "comment": "Comentar",
+  "@comment": {
+    "description": "Etiqueta para la acción de comentar"
+  },
+  "share": "Compartir",
+  "@share": {
+    "description": "Etiqueta para la acción de compartir"
+  },
+  "hideContent": "Ocultar contenido",
+  "@hideContent": {
+    "description": "Etiqueta para ocultar"
+  },
+  "sendMessage": "Enviar mensaje",
+  "@sendMessage": {
+    "description": "Etiqueta del botón para enviar un mensaje"
+  },
+  "editProfile": "Editar Perfil",
+  "@editProfile": {
+    "description": "Etiqueta del botón para editar el perfil del usuario"
+  },
+  "posts": "Publicaciones",
+  "@posts": {
+    "description": "Etiqueta para el número de publicaciones"
+  },
+  "followers": "Seguidores",
+  "@followers": {
+    "description": "Etiqueta para el número de seguidores"
+  },
+  "following": "Siguiendo",
+  "@following": {
+    "description": "Etiqueta para el número de seguidos"
+  },
+  "userName": "Nombre de Usuario",
+  "@userName": {
+    "description": "Etiqueta para el nombre del usuario"
+  },
+  "userHandle": "@nombreusuario",
+  "@userHandle": {
+    "description": "Identificador o nombre de usuario"
+  },
+  "userDescription": "Desarrollador Flutter | Amante de UX | Café + Código ☕",
+  "@userDescription": {
+    "description": "Biografía corta del usuario"
   }
-  
+}

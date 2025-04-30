@@ -1,0 +1,100 @@
+{
+    "@@locale": "fr",
+    "appTitle": "Application Duale",
+    "@appTitle": {
+      "description": "Titre principal de l'application"
+    },
+    "welcomeMessage": "Bienvenue sur l'application Duale",
+    "@welcomeMessage": {
+      "description": "Message de bienvenue affiché sur l'écran d'accueil"
+    },
+    "settingsTitle": "Paramètres",
+    "@settingsTitle": {
+      "description": "Titre de l'écran des paramètres"
+    },
+    "languageLabel": "Sélectionnez une langue",
+    "@languageLabel": {
+      "description": "Étiquette pour sélectionner la langue"
+    },
+    "home": "Accueil",
+    "@home": {
+      "description": "Option de menu pour l'accueil"
+    },
+    "createPost": "Créer une publication",
+    "@createPost": {
+      "description": "Option de menu pour créer une nouvelle publication"
+    },
+    "profile": "Profil",
+    "@profile": {
+      "description": "Option de menu pour accéder au profil utilisateur"
+    },
+    "deleted": "Supprimé",
+    "@deleted": {
+      "description": "Message affiché lorsqu'une publication est supprimée"
+    },
+    "title": "Titre",
+    "@title": {
+      "description": "Étiquette du champ du titre"
+    },
+    "content": "Contenu",
+    "@content": {
+      "description": "Étiquette du champ du contenu"
+    },
+    "noImageSelected": "Aucune image sélectionnée",
+    "@noImageSelected": {
+      "description": "Message affiché lorsqu'aucune image n'a été sélectionnée"
+    },
+    "selectImage": "Sélectionner une image",
+    "@selectImage": {
+      "description": "Bouton pour sélectionner une image"
+    },
+    "publish": "Publier",
+    "@publish": {
+      "description": "Bouton pour publier la publication"
+    },
+    "comment": "Commenter",
+    "@comment": {
+      "description": "Étiquette pour l'action de commenter"
+    },
+    "share": "Partager",
+    "@share": {
+      "description": "Étiquette pour l'action de partage"
+    },
+    "hideContent": "Masquer le contenu",
+    "@hideContent": {
+      "description": "Étiquette pour masquer le contenu"
+    },
+    "sendMessage": "Envoyer un message",
+    "@sendMessage": {
+      "description": "Bouton pour envoyer un message"
+    },
+    "editProfile": "Modifier le profil",
+    "@editProfile": {
+      "description": "Bouton pour modifier le profil utilisateur"
+    },
+    "posts": "Publications",
+    "@posts": {
+      "description": "Nombre de publications"
+    },
+    "followers": "Abonnés",
+    "@followers": {
+      "description": "Nombre d'abonnés"
+    },
+    "following": "Abonnements",
+    "@following": {
+      "description": "Nombre d'abonnements"
+    },
+    "userName": "Nom d'utilisateur",
+    "@userName": {
+      "description": "Nom de l'utilisateur"
+    },
+    "userHandle": "@nomutilisateur",
+    "@userHandle": {
+      "description": "Identifiant utilisateur"
+    },
+    "userDescription": "Développeur Flutter | Amateur de UX | Café + Code ☕",
+    "@userDescription": {
+      "description": "Courte biographie de l'utilisateur"
+    }
+  }
+  

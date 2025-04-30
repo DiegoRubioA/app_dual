@@ -5,8 +5,11 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'l10n_de.dart';
 import 'l10n_en.dart';
 import 'l10n_es.dart';
+import 'l10n_fr.dart';
+import 'l10n_it.dart';
 
 // ignore_for_file: type=lint
 
@@ -91,8 +94,11 @@ abstract class S {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
+    Locale('de'),
     Locale('en'),
-    Locale('es')
+    Locale('es'),
+    Locale('fr'),
+    Locale('it')
   ];
 
   /// Main title of the application
@@ -190,6 +196,54 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Hide content'**
   String get hideContent;
+
+  /// Button label to send a message
+  ///
+  /// In en, this message translates to:
+  /// **'Send Message'**
+  String get sendMessage;
+
+  /// Button label to edit the user profile
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// Label for the number of posts
+  ///
+  /// In en, this message translates to:
+  /// **'Posts'**
+  String get posts;
+
+  /// Label for the number of followers
+  ///
+  /// In en, this message translates to:
+  /// **'Followers'**
+  String get followers;
+
+  /// Label for the number of following
+  ///
+  /// In en, this message translates to:
+  /// **'Following'**
+  String get following;
+
+  /// Label for the user's name
+  ///
+  /// In en, this message translates to:
+  /// **'User Name'**
+  String get userName;
+
+  /// User's handle or username
+  ///
+  /// In en, this message translates to:
+  /// **'@username'**
+  String get userHandle;
+
+  /// Short bio of the user
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter Developer | UX Lover | Coffee + Code ☕'**
+  String get userDescription;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {
@@ -201,7 +255,7 @@ class _SDelegate extends LocalizationsDelegate<S> {
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'es'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['de', 'en', 'es', 'fr', 'it'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_SDelegate old) => false;
@@ -212,8 +266,11 @@ S lookupS(Locale locale) {
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'de': return SDe();
     case 'en': return SEn();
     case 'es': return SEs();
+    case 'fr': return SFr();
+    case 'it': return SIt();
   }
 
   throw FlutterError(

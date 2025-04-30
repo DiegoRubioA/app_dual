@@ -9,6 +9,8 @@ import 'package:app_dual/presentation/screen/create_post/create_post_screen.dart
 import 'package:app_dual/presentation/screen/profile/profile_screen.dart';
 import 'package:app_dual/presentation/screen/settings/settings_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:app_dual/presentation/screen/splash/splash_screen.dart';
+
 import 'l10n/l10n.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -37,13 +39,14 @@ class AppDual extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.supportedLocales,
-      initialRoute: '/',
+      initialRoute: '/splash',
       routes: {
         '/': (context) => const HomeScreen(),
         '/details': (context) => const DetailsScreen(),
         '/create': (context) => const CreatePostScreen(),
         '/profile': (context) => const ProfileScreen(),
         '/settings': (context) => const SettingsScreen(),
+        '/splash': (context) => const SplashScreen(),
       },
     );
   }

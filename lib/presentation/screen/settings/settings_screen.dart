@@ -38,6 +38,18 @@ class SettingsScreen extends ConsumerWidget {
                   value: Locale('en'),
                   child: Text('English 🇺🇸'),
                 ),
+                DropdownMenuItem(
+                  value: Locale('fr'),
+                  child: Text('Français 🇫🇷'),
+                ),
+                DropdownMenuItem(
+                  value: Locale('it'),
+                  child: Text('Italiano 🇮🇹'),
+                ),
+                DropdownMenuItem(
+                  value: Locale('de'),
+                  child: Text('Deutsch 🇩🇪'),
+                ),
               ],
             ),
             const Divider(height: 32),

@@ -1,3 +1,5 @@
+/// Lista simulada de publicaciones que podrían representar un feed de una red social.
+/// Cada elemento es un mapa con los campos: id, name, description e image.
 List<Map<String, dynamic>> listCard = [
   {
     "id": 1,
@@ -15,4 +17,6 @@ List<Map<String, dynamic>> listCard = [
   },
 ];
 
+/// Variable global para mantener el ID siguiente disponible al crear una nueva publicación.
+/// Útil si se implementa una función para agregar elementos dinámicamente a `listCard`.
 int nextId = 3;

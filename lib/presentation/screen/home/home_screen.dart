@@ -6,6 +6,14 @@ import 'package:app_dual/presentation/widgets/post_card.dart';
 import 'package:app_dual/presentation/widgets/post_search.dart';
 import 'package:app_dual/l10n/l10n.dart';
 
+// Importaciones:
+// - `data.dart`: para acceder a la lista de publicaciones (`listCard`).
+// - `post_card.dart`: widget que muestra cada publicación.
+// - `post_search.dart`: lógica personalizada de búsqueda.
+// - `l10n.dart`: para internacionalización con `S.of(context)`.
+
+/// Pantalla principal que muestra el feed de publicaciones.
+/// Incluye navegación, búsqueda, y creación de nuevas publicaciones.
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
@@ -17,20 +25,23 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // AppBar con búsqueda y título internacionalizado
+      // AppBar con botón de búsqueda y título traducido.
       appBar: AppBar(
         title: Text(S.of(context)!.appTitle),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () async {
-              final navigator = Navigator.of(context); // ✅ evitar warning
+              final navigator = Navigator.of(context); // 🧼 Para evitar warning
 
               final result = await showSearch<Map<String, dynamic>>(
                 context: context,
-                delegate: PostSearchDelegate(listCard),
+                delegate: PostSearchDelegate(
+                  listCard,
+                ), // Busca entre los posts.
               );
 
+              // Si se seleccionó un resultado, navegar al detalle.
               if (result != null && result.isNotEmpty) {
                 navigator.pushNamed('/details', arguments: result);
               }
@@ -39,7 +50,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ],
       ),
 
-      // Drawer de navegación
+      // Drawer lateral de navegación entre pantallas
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -75,7 +86,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ),
       ),
 
-      // Feed de posts
+      // Lista de publicaciones, usando PostCard personalizado.
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(vertical: 8),
         itemCount: listCard.length,
@@ -96,13 +107,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         },
       ),
 
-      // Botón FAB que añade una publicación nueva
+      // Botón flotante para crear nueva publicación
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           final newPost = await Navigator.pushNamed(context, '/create');
           if (newPost != null && newPost is Map<String, dynamic>) {
             setState(() {
-              listCard.insert(0, newPost);
+              listCard.insert(
+                0,
+                newPost,
+              ); // Agrega la nueva publicación al inicio.
               nextId = newPost['id'] + 1;
             });
           }

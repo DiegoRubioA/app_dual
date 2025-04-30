@@ -4,9 +4,16 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:app_dual/l10n/l10n.dart';
 import 'package:share_plus/share_plus.dart';
 
+// Importaciones:
+// - `cached_network_image`: para mostrar imágenes remotas con caché y placeholders.
+// - `share_plus`: para compartir contenido a través de apps externas.
+// - `dart:io`: para cargar imágenes locales desde el dispositivo.
+
+/// Widget personalizado para mostrar una publicación en forma de tarjeta.
+/// Incluye imagen, autor, descripción (expandible), botón de "me gusta", comentarios y compartir.
 class PostCard extends StatefulWidget {
-  final Map<String, String> data;
-  final VoidCallback onTap;
+  final Map<String, String> data; // Datos de la publicación
+  final VoidCallback onTap; // Acción al pulsar la tarjeta (navegar a detalles)
 
   const PostCard({required this.data, required this.onTap, super.key});
 
@@ -15,9 +22,9 @@ class PostCard extends StatefulWidget {
 }
 
 class _PostCardState extends State<PostCard> {
-  late int likes;
-  bool isLiked = false;
-  bool _showDescription = false;
+  late int likes; // Contador de "me gusta"
+  bool isLiked = false; // Estado de si está marcado como favorito
+  bool _showDescription = false; // Controla si se muestra la descripción
 
   @override
   void initState() {
@@ -25,6 +32,7 @@ class _PostCardState extends State<PostCard> {
     likes = int.tryParse(widget.data['likes'] ?? '0') ?? 0;
   }
 
+  /// Alterna el estado de "me gusta" y actualiza el contador
   void toggleLike() {
     setState(() {
       isLiked = !isLiked;
@@ -32,6 +40,7 @@ class _PostCardState extends State<PostCard> {
     });
   }
 
+  /// Comparte la publicación usando el texto generado
   void sharePost() {
     final author = widget.data['author'] ?? '';
     final message = widget.data['message'] ?? '';
@@ -40,6 +49,7 @@ class _PostCardState extends State<PostCard> {
     SharePlus.instance.share(ShareParams(text: shareText));
   }
 
+  /// Muestra la imagen de la publicación desde red, dispositivo o asset
   Widget buildImage() {
     final url = widget.data['imageUrl'];
     final colors = Theme.of(context).colorScheme;
@@ -72,7 +82,7 @@ class _PostCardState extends State<PostCard> {
       return Image.file(File(url), height: 180, fit: BoxFit.cover);
     }
 
-    // NUEVO: tratar como asset si es una ruta relativa
+    // Ruta local de asset
     return Image.asset(url, height: 180, fit: BoxFit.cover);
   }
 
@@ -90,7 +100,7 @@ class _PostCardState extends State<PostCard> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Header
+            // Cabecera con avatar y autor
             Padding(
               padding: const EdgeInsets.all(12),
               child: Row(
@@ -107,10 +117,10 @@ class _PostCardState extends State<PostCard> {
               ),
             ),
 
-            // Imagen
+            // Imagen de la publicación con Hero para transición
             Hero(tag: widget.data['id']!, child: buildImage()),
 
-            // Descripción visible si está expandida
+            // Descripción (visible si está expandida)
             if (_showDescription)
               Padding(
                 padding: const EdgeInsets.symmetric(
@@ -120,7 +130,7 @@ class _PostCardState extends State<PostCard> {
                 child: Text(widget.data['message'] ?? ''),
               ),
 
-            // Botones
+            // Botones de acción
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -159,6 +169,7 @@ class _PostCardState extends State<PostCard> {
   }
 }
 
+/// Botón reutilizable con icono y etiqueta.
 class _ActionButton extends StatelessWidget {
   final IconData icon;
   final String label;

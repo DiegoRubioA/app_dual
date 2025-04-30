@@ -3,6 +3,14 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:app_dual/data/data.dart';
 
+// Importaciones:
+// - `material.dart`: para construir la interfaz.
+// - `dart:io`: para manipular archivos locales (como imágenes).
+// - `image_picker`: para seleccionar imágenes desde la galería.
+// - `data.dart`: acceso a la lista de publicaciones y el id incremental.
+
+/// Pantalla para crear una nueva publicación.
+/// Permite ingresar nombre, descripción y seleccionar una imagen desde la galería.
 class CreatePostScreen extends StatefulWidget {
   const CreatePostScreen({super.key});
 
@@ -12,12 +20,14 @@ class CreatePostScreen extends StatefulWidget {
 }
 
 class _CreatePostScreenState extends State<CreatePostScreen> {
-  final _formKey = GlobalKey<FormState>();
-  final _nameCtrl = TextEditingController();
-  final _descCtrl = TextEditingController();
-  File? _pickedImage;
-  bool _isPicking = false;
+  final _formKey = GlobalKey<FormState>(); // Llave para validar el formulario.
+  final _nameCtrl = TextEditingController(); // Controlador del campo de nombre.
+  final _descCtrl =
+      TextEditingController(); // Controlador del campo de descripción.
+  File? _pickedImage; // Imagen seleccionada por el usuario.
+  bool _isPicking = false; // Para evitar múltiples llamadas al selector.
 
+  /// Abre el selector de imágenes y guarda la imagen elegida.
   Future<void> _pickImage() async {
     if (_isPicking) return;
     setState(() => _isPicking = true);
@@ -47,6 +57,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
           key: _formKey,
           child: Column(
             children: [
+              // Campo de nombre
               TextFormField(
                 controller: _nameCtrl,
                 decoration: const InputDecoration(
@@ -62,6 +73,8 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                             : null,
               ),
               const SizedBox(height: 16),
+
+              // Campo de descripción
               TextFormField(
                 controller: _descCtrl,
                 decoration: const InputDecoration(
@@ -78,6 +91,8 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                             : null,
               ),
               const SizedBox(height: 16),
+
+              // Sección para mostrar imagen seleccionada y botón de selector
               Row(
                 children: [
                   Expanded(
@@ -101,7 +116,10 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                   ),
                 ],
               ),
+
               const Spacer(),
+
+              // Botón para crear la publicación
               SizedBox(
                 width: double.infinity,
                 child: FilledButton.icon(
@@ -116,7 +134,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                         'image': _pickedImage?.path ?? '',
                       };
                       nextId++;
-                      Navigator.pop(context, post);
+                      Navigator.pop(context, post); // Retorna el nuevo post.
                     }
                   },
                   style: FilledButton.styleFrom(

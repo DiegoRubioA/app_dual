@@ -16,12 +16,22 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
   final _nameCtrl = TextEditingController();
   final _descCtrl = TextEditingController();
   File? _pickedImage;
+  bool _isPicking = false;
 
   Future<void> _pickImage() async {
-    final picker = ImagePicker();
-    final file = await picker.pickImage(source: ImageSource.gallery);
-    if (file != null) {
-      setState(() => _pickedImage = File(file.path));
+    if (_isPicking) return;
+    setState(() => _isPicking = true);
+
+    try {
+      final picker = ImagePicker();
+      final file = await picker.pickImage(source: ImageSource.gallery);
+      if (file != null) {
+        setState(() => _pickedImage = File(file.path));
+      }
+    } catch (e) {
+      debugPrint('Error picking image: $e');
+    } finally {
+      setState(() => _isPicking = false);
     }
   }
 
@@ -86,7 +96,8 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                   const SizedBox(width: 12),
                   IconButton(
                     icon: const Icon(Icons.image),
-                    onPressed: _pickImage,
+                    onPressed: _isPicking ? null : _pickImage,
+                    tooltip: _isPicking ? 'Cargando...' : 'Seleccionar imagen',
                   ),
                 ],
               ),

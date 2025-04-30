@@ -72,7 +72,8 @@ class _PostCardState extends State<PostCard> {
       return Image.file(File(url), height: 180, fit: BoxFit.cover);
     }
 
-    return const SizedBox.shrink();
+    // NUEVO: tratar como asset si es una ruta relativa
+    return Image.asset(url, height: 180, fit: BoxFit.cover);
   }
 
   @override

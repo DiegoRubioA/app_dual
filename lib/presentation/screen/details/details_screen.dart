@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -83,27 +85,40 @@ class _DetailsScreenState extends State<DetailsScreen> {
             if (imageUrl.isNotEmpty)
               Hero(
                 tag: args['id'].toString(),
-                child:
-                    imageUrl.startsWith('http')
-                        ? Image.network(
-                          imageUrl,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                          loadingBuilder: (context, child, progress) {
-                            if (progress == null) return child;
-                            return const Center(
-                              child: CircularProgressIndicator(),
-                            );
-                          },
-                          errorBuilder:
-                              (_, __, ___) =>
-                                  const Center(child: Icon(Icons.error)),
-                        )
-                        : Image.asset(
-                          imageUrl,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                        ),
+                child: Builder(
+                  builder: (_) {
+                    if (imageUrl.startsWith('http')) {
+                      return Image.network(
+                        imageUrl,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                        loadingBuilder: (context, child, progress) {
+                          if (progress == null) return child;
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        },
+                        errorBuilder:
+                            (_, __, ___) =>
+                                const Center(child: Icon(Icons.error)),
+                      );
+                    } else if (imageUrl.startsWith('/')) {
+                      // Imagen del dispositivo (File)
+                      return Image.file(
+                        File(imageUrl),
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      );
+                    } else {
+                      // Imagen asset
+                      return Image.asset(
+                        imageUrl,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      );
+                    }
+                  },
+                ),
               ),
             if (imageUrl.isNotEmpty) const SizedBox(height: 16),
             Text(description, style: const TextStyle(fontSize: 18)),

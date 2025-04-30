@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:app_dual/core/constants/colors.dart';
+import 'editProfileScreen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Mi Perfil'),
-        backgroundColor: theme.colorScheme.primary,
+        backgroundColor: AppColors.primary,
         actions: [
           IconButton(
             icon: const Icon(Icons.edit),
             onPressed: () {
-              // Navegar a la pantalla de edición
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const EditProfileScreen(),
+                ),
+              );
             },
           ),
         ],
@@ -29,9 +34,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 const CircleAvatar(
                   radius: 60,
-                  backgroundImage: NetworkImage(
-                    'https://via.placeholder.com/150',
-                  ),
+                  backgroundImage: AssetImage('assets/images/fotoPerfil.jpg'),
                 ),
                 Positioned(
                   child: CircleAvatar(
@@ -48,11 +51,11 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             const Text(
-              'Nombre de Usuario',
+              'Diego',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 4),
-            const Text('@nombreusuario', style: TextStyle(color: Colors.grey)),
+            const Text('@Diego_Rubio', style: TextStyle(color: Colors.grey)),
             const SizedBox(height: 12),
             const Text(
               'Desarrollador Flutter | UX Lover | Café + Código ☕',
@@ -70,11 +73,14 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             ElevatedButton.icon(
-              icon: const Icon(Icons.message),
-              label: const Text("Enviar mensaje"),
+              icon: const Icon(Icons.message, color: Colors.white),
+              label: const Text(
+                "Enviar mensaje",
+                style: TextStyle(color: Colors.white),
+              ),
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.primary,
+                backgroundColor: AppColors.secondary,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
